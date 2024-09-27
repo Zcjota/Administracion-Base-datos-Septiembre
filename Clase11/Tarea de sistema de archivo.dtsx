@@ -1,0 +1,264 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/19/2024 7:12:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ZCJOTA"
+  DTS:CreatorName="ZCJOTA\Junior"
+  DTS:DTSID="{A72E5D4E-2E68-4798-AF27-EEECB311D899}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{9D192CBB-F492-4F7E-A173-2C0B7EB2885E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Clientes.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{B2C3A32C-B9AC-4EBE-BB0F-C09D8EC45617}"
+      DTS:ObjectName="Clientes.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Junior\Documents\sqljunior\ADMINISTRACIÓN DE BASE DE DATOS I (PRESENCIALNOCHE8F7D7D)\Clase 15\Clientes.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Destino]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{9A35F66A-073D-4A92-B0DE-66CF9833AF13}"
+      DTS:ObjectName="Destino">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="C:\Users\Junior\Documents\sqljunior\ADMINISTRACIÓN DE BASE DE DATOS I (PRESENCIALNOCHE8F7D7D)\Clase 15\Destino" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Origen]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{9CFC97FF-91DF-4E49-B8B9-EEDB00FC875A}"
+      DTS:ObjectName="Origen">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="C:\Users\Junior\Documents\sqljunior\ADMINISTRACIÓN DE BASE DE DATOS I (PRESENCIALNOCHE8F7D7D)\Clase 15\Origen" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Origen.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{CDF57AA6-67E5-45E3-B5D0-D18870139AD9}"
+      DTS:ObjectName="Origen.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Junior\Documents\sqljunior\ADMINISTRACIÓN DE BASE DE DATOS I (PRESENCIALNOCHE8F7D7D)\Clase 15\Origen\Origen.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Origen.xlsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{A8475647-879A-43D6-A80F-E52DAE92623A}"
+      DTS:ObjectName="Origen.xlsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Junior\Documents\sqljunior\ADMINISTRACIÓN DE BASE DE DATOS I (PRESENCIALNOCHE8F7D7D)\Clase 15\Origen\Origen.xlsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{285288A0-FA86-41F1-B3D2-C85DF2BD0865}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="dDestino">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Junior\Documents\sqljunior\ADMINISTRACIÓN DE BASE DE DATOS I (PRESENCIALNOCHE8F7D7D)\Clase 15\Destino</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A59622B7-D3F0-43F7-ACDE-967DCD4BBB09}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="dOrigen">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Junior\Documents\sqljunior\ADMINISTRACIÓN DE BASE DE DATOS I (PRESENCIALNOCHE8F7D7D)\Clase 15\Origen</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Copia de archivos"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Tarea Sistema de archivos"
+      DTS:DTSID="{6118DF3A-D1A7-4F3E-AEF2-09DB24D17308}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copia de archivos"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="{B2C3A32C-B9AC-4EBE-BB0F-C09D8EC45617}"
+          TaskDestinationPath="{9A35F66A-073D-4A92-B0DE-66CF9833AF13}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Crear Directorio de Destino"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Tarea Sistema de archivos"
+      DTS:DTSID="{DAB495CA-FDDC-46C7-9766-11B203817753}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Crear Directorio de Destino"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="CreateDirectory"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::dDestino"
+          TaskIsSourceVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Crear Directorio de Origen"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Crear Directorio de Origen"
+      DTS:DTSID="{BCD7895F-1696-42A8-8907-FD9C7E871336}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Crear Directorio de Origen"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="CreateDirectory"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::dOrigen"
+          TaskIsSourceVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{F7CD55EE-9E38-4686-AB82-DE52910E29E1}"
+      DTS:From="Package\Crear Directorio de Origen"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Copia de archivos" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{8C6A4ACB-5062-41E5-BE13-334287F902A1}"
+      DTS:From="Package\Crear Directorio de Destino"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Copia de archivos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Copia de archivos"
+          TopLeft="362.499980193874,292.066664635671" />
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\Crear Directorio de Destino"
+          TopLeft="467.499974456927,159.466665557755" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Crear Directorio de Origen"
+          TopLeft="218.333321404126,160.333332218395" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="318.333321404126,201.933332218395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.966658789747,90.133332417276"
+              Start="0,0"
+              End="124.966658789747,82.633332417276">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.066666208638" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.066666208638"
+                    Point2="0,45.066666208638"
+                    Point3="4,45.066666208638" />
+                  <mssgle:LineSegment
+                    End="120.966658789747,45.066666208638" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.966658789747,45.066666208638"
+                    Point2="124.966658789747,45.066666208638"
+                    Point3="124.966658789747,49.066666208638" />
+                  <mssgle:LineSegment
+                    End="124.966658789747,82.633332417276" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="569.499974456927,201.066665557755">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-100.599994263053,90.999999077916"
+              Start="0,0"
+              End="-100.599994263053,83.499999077916">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.0647053345265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.0647053345265"
+                    Point2="0,54.0647053345265"
+                    Point3="-4,54.0647053345265" />
+                  <mssgle:LineSegment
+                    End="-96.5999942630534,54.0647053345265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-96.5999942630534,54.0647053345265"
+                    Point2="-100.599994263053,54.0647053345265"
+                    Point3="-100.599994263053,58.0647053345265" />
+                  <mssgle:LineSegment
+                    End="-100.599994263053,83.499999077916" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
